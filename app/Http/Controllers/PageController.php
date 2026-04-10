@@ -16,4 +16,9 @@ class PageController extends Controller
         $dishes = Dish::all();
         return view('menu', compact('dishes'));
     }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

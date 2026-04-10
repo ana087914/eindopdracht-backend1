@@ -9,9 +9,10 @@ class Dish extends Model
    
 
     protected $fillable = [
-        'name',
-        'description',
-        'price',
-    ];
+    'name',
+    'description',
+    'price',
+    'image',
+];
 
 }

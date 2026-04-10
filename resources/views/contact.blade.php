@@ -1,64 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
-    <style>
-        body {
-            background: #111;
-            color: white;
-            font-family: Arial;
-            padding: 40px;
-        }
+@extends('layouts.app')
 
-        input, textarea {
-            width: 400px;
-            padding: 10px;
-            margin-bottom: 15px;
-        }
+@section('content')
 
-        button {
-            padding: 10px 15px;
-        }
+<style>
+    .contact-page {
+        min-height: 100vh;
+        background-image: linear-gradient(rgba(20, 0, 20, 0.5), rgba(20, 0, 20, 0.5)), url('{{ asset('images/sushi1.jpg') }}');
+        background-size: cover;
+        background-position: center;
+        padding-top: 120px;
+        color: white;
+        text-align: center;
+    }
 
-        .success {
-            background: green;
-            padding: 10px;
-            margin-bottom: 20px;
-        }
+    .contact-box {
+        background: rgba(255,255,255,0.2);
+        width: 400px;
+        max-width: 90%;
+        margin: auto;
+        padding: 30px;
+    }
 
-        a {
-            color: pink;
-        }
-    </style>
-</head>
-<body>
+    input, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: none;
+    }
 
-    <h1>Contact Us</h1>
+    button {
+        padding: 10px 15px;
+        cursor: pointer;
+    }
 
-    <a href="{{ route('home') }}">Home</a>
+    .success {
+        background: green;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+</style>
 
-    @if(session('success'))
-        <div class="success">{{ session('success') }}</div>
-    @endif
+<div class="contact-page">
 
-    <form method="POST" action="{{ route('contact.store') }}">
-        @csrf
+    <h1>Contact</h1>
 
-        <div>
+    <div class="contact-box">
+
+        @if(session('success'))
+            <div class="success">{{ session('success') }}</div>
+        @endif
+
+        <form method="POST" action="{{ route('contact.store') }}">
+            @csrf
+
             <input type="text" name="name" placeholder="Name">
-        </div>
-
-        <div>
             <input type="email" name="email" placeholder="Email">
-        </div>
-
-        <div>
             <textarea name="message" placeholder="Message"></textarea>
-        </div>
 
-        <button type="submit">Send</button>
-    </form>
+            <button type="submit">Send</button>
+        </form>
 
-</body>
-</html>
+    </div>
+
+</div>
+
+@endsection

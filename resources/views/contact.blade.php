@@ -14,7 +14,7 @@
     }
 
     .contact-box {
-        background: rgba(255,255,255,0.2);
+        background: rgba(255,255,255,0.2);22
         width: 400px;
         max-width: 90%;
         margin: auto;

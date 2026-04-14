@@ -12,7 +12,7 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [MessageController::class, 'store'])->name('contact.store');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('dishes.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {

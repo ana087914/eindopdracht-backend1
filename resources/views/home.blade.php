@@ -1,6 +1,8 @@
+
 @extends('layouts.app')
 
 @section('content')
+
 <style>
     * {
         margin: 0;
